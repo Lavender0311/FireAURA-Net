@@ -47,18 +47,51 @@ The merged COCO annotation file prepared for this release contains:
 
 The figures above describe the current merged annotation file. They should not be interpreted as train/validation/test subset statistics.
 
+
 ### Dataset Organization
+
+FIRESET images and annotations are publicly available through this repository.
+
+The COCO-format annotations are stored in the repository, while the dataset images are distributed as a ZIP archive through GitHub Releases.
+
+Repository structure:
 
 ```text
 FireAURA-Net/
 ├── README.md
 └── datasets/
     └── FIRESET/
-        ├── images/
-        │   └── [836 image files]
         └── annotations/
             └── instances_all.json
 ```
+
+Release asset:
+- `FIRESET-images.zip` (836 images)
+
+### Download and Usage
+
+**Dataset images:**
+
+Download `FIRESET-images.zip` from the [FIRESET Dataset Release](https://github.com/Lavender0311/FireAURA-Net/releases/tag/dataset).
+
+**COCO annotations:**
+
+Download [instances_all.json](https://github.com/Lavender0311/FireAURA-Net/blob/main/datasets/FIRESET/annotations/instances_all.json).
+
+After downloading, extract the image archive and organize the files as follows:
+
+```text
+FIRESET/
+├── images/
+│   └── [836 image files]
+└── annotations/
+    └── instances_all.json
+```
+
+The `file_name` values in the JSON correspond to the original image filenames. All images should be kept under the `images/` directory without renaming.
+
+The released annotations do not include predefined training, validation, or test splits. Users may construct their own splits following the guidance below.
+
 
 ### Annotation Format
 
